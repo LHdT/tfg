@@ -5,7 +5,7 @@ import java.util.HashMap;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class SiteTasteCA extends SiteImpl<String> {
+public class SiteTasteCA<T,K,V> extends SiteImpl{
     protected static final String DOMAIN = "www.taste.com.au";
 
     public SiteTasteCA(String url) {
