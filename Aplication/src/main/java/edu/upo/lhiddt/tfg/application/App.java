@@ -1,13 +1,18 @@
-package org.Aplication;
+package edu.upo.lhiddt.tfg.application;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * Hello world!
+ * Spring boot application runner
+ * 
+ * @author porman
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
-    }
+@SpringBootApplication(scanBasePackages = "edu.upo.lhiddt.tfg")
+public class App {
+	public static void main(String[] args) {
+		
+		SpringApplication.run(App.class, args);
+	}
 }
