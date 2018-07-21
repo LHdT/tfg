@@ -1,0 +1,33 @@
+<web-app>
+    <display-name>Struts 2 Web Application</display-name>
+
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+
+    </listener>
+    <listener>Cleanup de Spring
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener
+        </listener-class>
+    </listener>
+
+    <listener><!-- Permite utilizar los scope de aplicaciones web en el contexto
+			de spring -->
+        <listener-class>org.springframework.web.context.request.RequestContextListener
+        </listener-class>
+    </listener>
+
+
+
+</web-app>
