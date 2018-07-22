@@ -10,6 +10,7 @@
 
 </head>
 <body>
+<!-- 	dependencias CDN -->
 <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -47,7 +48,7 @@
 </body>
 <script>
 
-
+	// Consulto en el request los menus esta forma de componer los menus me permite mostrar unos menus u otros en función de los permisos del usuario 
     function getMenuItems(){
      	return ${menuItems}.menuItems;
     }
@@ -65,6 +66,8 @@
             $.post(url,(data)=>{
                $('#'+id).html(data);
             });
+    	
+    	//TODO: necesito implementar el resto de los metodos del protocolo HTTP
 	}
 
 	//funcion de despliegue y repliegue del menu
@@ -75,11 +78,12 @@
 					'notToggledClass' : 'sidebarNotToggled',
 					'inflateImg' : 'img/menu.png',
 					'deflateImg' : 'img/toggle-back.png'}){
+		//mapa logico que describe el comportamiento de las imagenes
 		var toggleMapper = {
 	 		    true : { cssClass : cnfObj['toggledClass'], img : cnfObj['inflateImg'] },
 	 		    false : { cssClass : cnfObj['notToggledClass'], img : cnfObj['deflateImg'] }
 	 	};
-		//Memorizo el estado del disebar
+		//memorizo el estado del sidebar
  		var toogler = $('#'+cnfObj['sidebarId']).hasClass(cnfObj['toggledClass']);
  		
 		//transición de estado de las propiedades css del sidebar dependiendo del estado actual
@@ -89,7 +93,7 @@
 
 	}
 
-	//consulta dinamica del ancho de la resolucion en funcion de la resolucion el dispositivo
+	//consultadel ancho de la resolucion en funcion de la resolucion el dispositivo
     function isMobile(maxWidth){
         return $( window ).width()<maxWidth;
     }
@@ -97,6 +101,7 @@
     //configuracion de la retencion del sidebar para diferenciar los distintos tipos de pantalla
 	function responsiveSetUp(maxWidth){
 		
+    	//en funcion del filtro se selecciona una propiedad
 	    responsiveMapper = {
 	        true : 'fixed',
 	        false : ''
@@ -111,7 +116,7 @@
 
     //funcion de parseo que me permite las reducciones
     function composeTemplate(template,attrs){
-
+		
         $.each(attrs,(k,v)=>{
         	//Incorporo cada elemento en su posicion equivalente 
             template=template.replace('#'+(k+1),v);
@@ -140,7 +145,7 @@
 
     //Workflow principal de la vista
 	$(document).ready(()=>{
-	    //seteo la propiedad fixed del contenedor principal
+	    //seteo la propiedad fixed del contenedor principal y es tablezco el cambio de comportamiento en en ancho 776
 	    responsiveSetUp(776);
 
         //cargo los item de menu de la aplicacion
@@ -153,32 +158,13 @@
         $('li>a.menu-item').click(function(event){
         	//Intercepto la navegacion del link
         	event.preventDefault();
-        	
-        	alert("li zone");
-        	
-        	//Cargo el contenido apuntado por el link en el contenedor principal
-        	loadPage($(this).attr('href'),"cotainerPrincipal");
         });
         
         $('ul>a.menu-item').click(function(event){
         	//Intercepto la navegacion del link
         	event.preventDefault();
-        	alert("ul zone");
-			//TODO: esto hace cosas raras y necesito corregirlo
-        	$.each($(this).children(),(item)=>{
-        		alert(item);
-        		if (item.hassClass('hidden-ittem')){
-        			alert("me muestro");
-        			item.show();
-        			item.removeClass('hidden-ittem');
-        		}else{
-        			alert("NO me muestro");
-        			item.hide();
-        			item.addClass('hidden-ittem');	
-        		}
-			});
+        	//TODO: necesito una animacion que colapse los elementos del nav segun los grupos
         });
-        
 	});
 
 </script>

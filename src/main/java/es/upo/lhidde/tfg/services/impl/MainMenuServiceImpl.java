@@ -36,7 +36,7 @@ public class MainMenuServiceImpl implements MainMenuService {
 	            "},"+
 	            "{"+
 	                "\"title\": \"Services\","+
-	                "\"url\": \"http://www.google.es\","+
+	                "\"url\": \"\","+
 	                "\"children\": ["+
 	                    "{"+
 	                       "\"title\": \"services child\","+

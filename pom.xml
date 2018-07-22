@@ -35,15 +35,16 @@
 
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
-            <version>5.0.3.RELEASE</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.0.3.RELEASE</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>5.0.3.RELEASE</version>
+		</dependency>
+        
 
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
         <dependency>
@@ -53,12 +54,13 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Struts -->
+        <!-- Struts 2-->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
             <version>2.5.10.1</version>
         </dependency>
+		<!-- dependencia encargada de la  -->
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-convention-plugin</artifactId>
@@ -69,6 +71,13 @@
             <artifactId>struts2-spring-plugin</artifactId>
             <version>2.5.10.1</version>
         </dependency>
+        
+        <!-- JSoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.11.2</version>
+		</dependency>
 
     </dependencies>
 
