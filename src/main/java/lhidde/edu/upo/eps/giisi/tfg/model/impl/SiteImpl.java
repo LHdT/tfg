@@ -23,20 +23,19 @@ public abstract class SiteImpl<T,K,V> implements Site {
      * @param url
      */
     public SiteImpl(String url) {
-	if (!url.contains(DOMAIN))
-	    throw new RuntimeException("not compatible URL");
-	this.url = url;
-	try {
-
-	    snifContent();
-
-	    loadIngredients();
-
-	    loadNutritionalData();
-
-	} catch (IOException e) {
-	    e.printStackTrace();
-	}
+		if (!url.contains(DOMAIN))
+		    throw new RuntimeException("not compatible URL");
+		this.url = url;
+		try {
+		    snifContent();
+	
+		    loadIngredients();
+	
+		    loadNutritionalData();
+	
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
     }
     public List<T> getIngredients() {
     	return ingredients;
