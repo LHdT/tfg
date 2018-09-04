@@ -9,14 +9,17 @@ import org.springframework.stereotype.Component;
 public class LoginProvider implements AuthenticationProvider {
 
 	@Override
-	public Authentication authenticate(Authentication arg0) throws AuthenticationException {
-		// TODO Auto-generated method stub
+	public Authentication authenticate(Authentication authProvider) throws AuthenticationException {
+		String username = authProvider.getName();
+		String password = authProvider.getCredentials().toString();
+		
+		
 		return null;
 	}
 
 	@Override
 	public boolean supports(Class<?> arg0) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated prueba eclipse
 		return false;
 	}
 
