@@ -15,6 +15,10 @@
         <action name="home" class="es.upo.lhidde.tfg.HomeController" >
             <result name="home">templates/home.jsp</result>
         </action>
+        
+        <action name="signUp" class="es.upo.lhidde.tfg.SignUpController" >
+            <result name="">templates/SignUp.jsp</result>
+        </action>
 
     </package>
 

@@ -64,7 +64,6 @@ public abstract class SiteImpl<T,K,V> implements Site {
 
     private void snifContent() throws IOException {
     	root = Jsoup.connect(url).get();
-
     }
 
     public String toString() {

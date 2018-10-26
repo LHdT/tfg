@@ -18,6 +18,9 @@ public abstract class GenericController extends ActionSupport implements Servlet
 	
 	public abstract String execute();
 
+	/**
+	 * metodo encargado de cargar el request como atributo
+	 */
 	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
